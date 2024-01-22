@@ -1,23 +1,34 @@
 import { useState } from "react";
-import "./MyForm.css"
-useState
-export const MyForm = ({userName,userEmail}) => {
-    //3 gerenciamento de dados
-    const [name, setName] = useState(userName)
-    const [email, setEmail] = useState(userEmail)
-    const handleName = (e) => {
-        setName(e.target.value)
-    }
-    // 5 - envio de form
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(name,email)
-    }
+import "./MyForm.css";
+useState;
+export const MyForm = ({ userName, userEmail }) => {
+  //3 gerenciamento de dados
+  const [name, setName] = useState(userName);
+  const [email, setEmail] = useState(userEmail);
 
-    console.log(name, email)
+    const [bio, setBio] = useState("");
+    
+    const [role,setRole] = useState("");
 
-    //validação
-    //envio
+  const handleName = (e) => {
+    setName(e.target.value);
+  };
+  // 5 - envio de form
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email);
+    setName("");
+    setEmail("");
+    setBio("");
+  };
+
+  console.log(name, email, bio);
+
+  //validação
+  //envio
+
+  // 7 - limpar form
+
   return (
     <div>
       {/* 1 - Criação de Form */}
@@ -48,8 +59,18 @@ export const MyForm = ({userName,userEmail}) => {
             value={email || ""}
           />
         </label>
+        {/* 8 - textarea */}
+        <label>
+          <span></span>
+          <textarea
+            name="bio"
+            placeholder="Descrição do usuário"
+            onChange={(e) => setBio(e.target.value)}
+            value={bio}
+          ></textarea>
+        </label>
         <input type="submit" value="Enviar" />
       </form>
     </div>
   );
-}
+};
