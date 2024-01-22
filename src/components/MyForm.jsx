@@ -6,9 +6,9 @@ export const MyForm = ({ userName, userEmail }) => {
   const [name, setName] = useState(userName);
   const [email, setEmail] = useState(userEmail);
 
-    const [bio, setBio] = useState("");
-    
-    const [role,setRole] = useState("");
+  const [bio, setBio] = useState("");
+
+  const [role, setRole] = useState("");
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -19,10 +19,11 @@ export const MyForm = ({ userName, userEmail }) => {
     console.log(name, email);
     setName("");
     setEmail("");
-    setBio("");
+      setBio("");
+      setRole("");
   };
 
-  console.log(name, email, bio);
+  console.log(name, email, bio,role);
 
   //validação
   //envio
@@ -68,6 +69,19 @@ export const MyForm = ({ userName, userEmail }) => {
             onChange={(e) => setBio(e.target.value)}
             value={bio}
           ></textarea>
+        </label>
+        {/* 9 - select */}
+        <label>
+          <span>função no sistema</span>
+          <select
+            name="role"
+            onChange={(e) => setRole(e.target.value)}
+            value={role}
+          >
+            <option value="user">Usuário</option>
+            <option value="editor">Editor</option>
+            <option value="adimin">Admin</option>
+          </select>
         </label>
         <input type="submit" value="Enviar" />
       </form>
