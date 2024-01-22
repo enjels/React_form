@@ -7,7 +7,7 @@ return (
 
       <div>
     <h1>Form em React</h1>
-    <MyForm/>
+    <MyForm userName="virgílio" userEmail="enjels@outlook.com"/>
       </div>
   )
 }
