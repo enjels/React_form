@@ -17,7 +17,7 @@ export const MyForm = () => {
           <span>E-mail:</span>
           <input type="email" name="Email" id="Email" placeholder="Digite seu email..." />
         </label>
-        <input type="submit" value="Enviar" />s
+        <input type="submit" value="Enviar" />
       </form>
     </div>
   );
